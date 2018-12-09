@@ -1,23 +1,7 @@
-/**
- * short localStorage
- */
 var db = localStorage;
-
-/**
- * short query selector
- *
- * @param      {<type>}  el      { parameter_description }
- * @return     {string}  { description_of_the_return_value }
- */
 var _ = function _(el) {
   return document.querySelector(el);
 };
-/**
- * Gets the tpl.
- *
- * @param      {<type>}  element  The element
- * @return     {string}  The tpl.
- */
 var getTpl = function getTpl(element) {
   return tpl[element];
 };
@@ -25,11 +9,7 @@ let loader = document.querySelector('#loader');
 if(loader !== null){
     loader.style.display='none';
 }
-/**
- * Makes an editable.
- *
- * @return     {string}  { description_of_the_return_value }
- */
+
 var makeEditable = function makeEditable() {
   var elements = document.querySelectorAll('.drop-element');
   var toArr = Array.prototype.slice.call(elements);
@@ -70,12 +50,6 @@ if (main !== null) {
     e.target.contentEditable = 'true'
   })
 }
-
-/**
- * Templates
- *
- * @type  string
- */
 var tpl = {
   'hugeTitle': `<div class="intro-heading text-uppercase" style="
                   font-size: 75px;
@@ -251,13 +225,6 @@ var tpl = {
   'image': '<img src="http://lorempixel.com/400/200/">',
   'code': '<pre>function say(name){\n return name;\n}</pre>'
 };
-
-
-/**
- * init dragula
- *
- * @type  function
- */
 var containers = [_('.box-left'), _('.box-right')];
 var drake = dragula(containers, {
   copy: function copy(el, source) {
@@ -278,38 +245,16 @@ drake.on('out', function (el, container) {
     })
   }
 });
-
-/**
- * save in local storage
- */
 if (typeof db.getItem('savedData') !== 'undefined') {
   _('.box-right').innerHTML = db.getItem('savedData');
   makeEditable();
 };
-
-/**
- * reset
- */
 _('.reset').addEventListener('click', function (e) {
   e.preventDefault;
   if (confirm('Are you sure !')) {
     _('.box-right').innerHTML = '';
   }
 });
-
-/**
- * save to file
- */
-//  _('.save').addEventListener('click', function (e) {
-//      e.preventDefault();
-//      var blob = new Blob([removeDivsToSave()], {
-//          type: 'text/html;charset=utf-8'
-//      });
-
-//      db.setItem('savedData', _('.box-right').innerHTML);
-//      saveAs(blob, 'file.html');
-//  });
-
 function hideHomePage() {
   let header = _('header');
   let menu = _('#sidebar-wrapper');

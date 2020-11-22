@@ -237,7 +237,6 @@ var drake = dragula(containers, {
 
 
 drake.on('out', function (el, container) {
-  console.log(el);
   if (container == _('.box-left')) {
     Promise.resolve(el.innerHTML = getTpl(el.getAttribute('data-tpl'))).then(function () {
       makeEditable();
@@ -260,7 +259,6 @@ function hideHomePage() {
   let menu = _('#sidebar-wrapper');
   let sideMenu = _('.menu-toggle');
   let topMenu = _('#top-nav');
-  let textEditor = _('.wrap');
   let editorApp = _('#app-editor');
   sideMenu.style.display = 'block';
   editorApp.style.display = 'block';

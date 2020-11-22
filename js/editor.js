@@ -129,32 +129,32 @@ var tpl = {
                   </div>
                   <div class="row">
                     <div class="col-lg-12">
-                      <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                      <form  name="sentMessage" novalidate="novalidate">
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                              <input class="form-control"  type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                               <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                              <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                              <input class="form-control" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
                               <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                              <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                              <input class="form-control"  type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
                               <p class="help-block text-danger"></p>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message." aria-invalid="false"></textarea>
+                              <textarea class="form-control"  placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message." aria-invalid="false"></textarea>
                               <p class="help-block text-danger"></p>
                             </div>
                           </div>
                           <div class="clearfix"></div>
                           <div class="col-lg-12 text-center">
-                            <div id="success"></div>
-                            <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                            <button style="width: auto;
+                            height: 62px;"  class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                           </div>
                         </div>
                       </form>
@@ -270,7 +270,6 @@ function hideHomePage() {
       header.remove();
       menu.classList.add('active');
       topMenu.style.opacity = '1';
-      textEditor.style.visibility = 'visible';
     }, 1200);
   }
 }
@@ -280,7 +279,7 @@ function setTheme(theme) {
   if(loader !== null){
     setTimeout(() => {
       loader.style.display='none';
-    }, 5000);
+    }, 2000);
   }
   let curTheme = _('#app-theme');
   if (curTheme !== null) {
